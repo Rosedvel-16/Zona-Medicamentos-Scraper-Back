@@ -12,7 +12,7 @@ COPY requirements.txt .
 # 4. Instalar TUS OTRAS dependencias (FastAPI, uvicorn, etc.)
 # Playwright ya viene instalado, pero pip es lo suficientemente inteligente
 # para saltárselo si ya está en la versión correcta.
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir --upgrade pip && pip install --no-cache-dir -r requirements.txt
 
 # 5. Copiar TODO el resto de tu código (app.py, carpeta scrapers/, etc.)
 COPY . .
